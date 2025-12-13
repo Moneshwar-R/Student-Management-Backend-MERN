@@ -7,15 +7,15 @@ const studentSchema=new mongoose.Schema({
     email:{type:String,required:true,unique:true}
 })
 
-studentSchema.pre('save',async function(){
-    if(this.isNew){
-            const counter=await Counter.findOneAndUpdate(
-            {id:"rollno"},
-            {$inc:{seq:1}},
-            {new:true,upsert:true}
-        )
-        this.rollno=counter.seq
-    }
-})
+// studentSchema.pre('save',async function(){
+//     if(this.isNew){
+//             const counter=await Counter.findOneAndUpdate(
+//             {id:"rollno"},
+//             {$inc:{seq:1}},
+//             {new:true,upsert:true}
+//         )
+//         this.rollno=counter.seq
+//     }
+// })
 
 module.exports=mongoose.model('Student',studentSchema)

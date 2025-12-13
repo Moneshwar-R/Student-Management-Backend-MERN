@@ -1,5 +1,13 @@
 const express=require('express')
 const {createStudent}=require('../controllers/studentController')
+const {getAllStudents}=require('../controllers/studentController')
+const {getStudent}=require('../controllers/studentController')
+const {deleteStudent}=require('../controllers/studentController')
+const {updateStudent}=require('../controllers/studentController')
 const router=express.Router()
 router.post('/',createStudent)
+router.get('/allstudents',getAllStudents)
+router.get('/allstudents/:id',getStudent)
+router.delete('/deletestudent/:id',deleteStudent)
+router.put('/updatestudent/:id',updateStudent)
 module.exports=router
