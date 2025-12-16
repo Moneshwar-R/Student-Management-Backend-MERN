@@ -4,7 +4,8 @@ const Counter=require('./counter')
 const studentSchema=new mongoose.Schema({
     rollno:{type:Number,unique:true},
     name:{type:String,required:true},
-    email:{type:String,required:true,unique:true}
+    email:{type:String,required:true,unique:true},
+    password:{type:String,required:true,unique:true}
 })
 
 // studentSchema.pre('save',async function(){
